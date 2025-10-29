@@ -60,7 +60,7 @@ class CallbackController extends BaseCallbackController
      */
     public function mollieCallbackAction(PaymentTransaction $transaction, Request $request)
     {
-        $shopReference = $transaction->getId();
+        $shopReference = $transaction->getEntityIdentifier();
 
         if (!$shopReference) {
             return $this->handleCallbackError($transaction);
